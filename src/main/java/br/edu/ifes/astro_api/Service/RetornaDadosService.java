@@ -36,21 +36,16 @@ public class RetornaDadosService {
             dados.setCorAleatoria(GerarCorAleatoria());
             dados.setSigno(GerarBichoAleatorio());
             dados.setBichoAleatorio(GerarBichoAleatorio());
-        } else {
-            dados.setCorAleatoria("Plano não gera número e cor aleatória");
-            dados.setSigno("Plano não gera signo aleatório");
-            dados.setBichoAleatorio("Plano não gera bicho aleatório");
         }
 
         if(plano.equalsIgnoreCase("avancado")) {
             dados.setBichoAleatorio(GerarBichoAleatorio());
             dados.setCorAleatoria(GerarCorAleatoria());
-        } else {
-            dados.setCorAleatoria("Plano não gera cor aleatória");
-            dados.setBichoAleatorio("Plano não gera bicho aleatório");
         }
-        
-        dados.setNumero(GerarNumero());
+
+        if(plano.equalsIgnoreCase("basico")) {
+            dados.setNumero(GerarNumero());
+        }
         
 
 
