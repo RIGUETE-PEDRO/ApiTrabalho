@@ -34,7 +34,7 @@ public class RetornaDadosService {
         
         if(plano.equalsIgnoreCase("premium")) {
             dados.setCorAleatoria(GerarCorAleatoria());
-            dados.setSigno(GerarBichoAleatorio());
+            dados.setSigno(gerarSigno());
             dados.setBichoAleatorio(GerarBichoAleatorio());
         }
 
@@ -50,6 +50,12 @@ public class RetornaDadosService {
 
 
         return dados;
+    }
+
+    private String gerarSigno() {
+        String[] signos = {"Áries", "Touro", "Gêmeos", "Câncer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitário", "Capricórnio", "Aquário", "Peixes"};
+        int index = new Random().nextInt(signos.length);
+        return signos[index];
     }
 
 }
